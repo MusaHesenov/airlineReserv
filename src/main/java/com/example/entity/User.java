@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 @Data
 @Builder
 @Entity
+//mail?
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

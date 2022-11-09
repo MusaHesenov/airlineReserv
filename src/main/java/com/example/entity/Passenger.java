@@ -27,6 +27,7 @@ public class Passenger {
     private String surname;
     private Gender gender;
     @Column(nullable = false)
+
     private String phoneNumber;
     private Integer bookingId;
     @OneToOne(cascade = CascadeType.ALL)
