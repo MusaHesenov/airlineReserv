@@ -20,7 +20,8 @@ public class Flight {
     private String duration;
     private LocalDate flightDate;
     private LocalTime flightTime;
-    private Integer flightNumber;
+    private String flightNumber;
+    private String origin;
 //flightda joincolumn olub amma infoda jointable?
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")

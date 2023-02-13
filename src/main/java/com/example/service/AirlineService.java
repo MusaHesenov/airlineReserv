@@ -12,19 +12,11 @@ public class AirlineService {
     @Autowired
     AirlineRepository airlineRepository;
 
-    public List<Airline> getAllAirline(){
-        return airlineRepository.findAll();
-    }
+    public List<Airline> getAllAirline(){ return airlineRepository.findAll();}
 
-    public Airline getAirlineById(Integer id){
-        return airlineRepository.findById(id).get();
-    }
+    public Airline getAirlineById(Integer id){return airlineRepository.findById(id).get();}
 
-    public Airline save(Airline airline){
-        return airlineRepository.save(airline);
-    }
+    public Airline save(Airline airline){return airlineRepository.save(airline);}
 
-    public Airline getAirlineByName(String name){
-        return airlineRepository.findByName(name);
-    }
+    public Airline getAirlineByName(String name){return airlineRepository.findByName(name);}
 }

@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/user/")
+@RestController("/user")
 public class UserController {
     UserService userService;
 
@@ -21,7 +21,7 @@ public class UserController {
         return new ResponseEntity<User>(userService.registration(user), HttpStatus.CREATED);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/User/{id}")
     public ResponseEntity<User> getUser(@PathVariable("id") Integer id){
         return new ResponseEntity<>(userService.getUserById(id),HttpStatus.OK);
     }

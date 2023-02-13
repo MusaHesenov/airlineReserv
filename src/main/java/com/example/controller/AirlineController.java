@@ -2,14 +2,16 @@ package com.example.controller;
 
 import com.example.entity.Airline;
 import com.example.service.AirlineService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/Airline/")
+@RestController("/Airline")
 public class AirlineController {
-    AirlineService airlineService;
 
+    AirlineService airlineService;
+    @Autowired
     public AirlineController(AirlineService airlineService){
         this.airlineService=airlineService;
     }
@@ -18,7 +20,7 @@ public class AirlineController {
         return new ResponseEntity<Airline>(airlineService.save(airline), HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/Airline/{id}")
     public ResponseEntity<Airline> getAirline(@PathVariable("id") Integer id){
         return new ResponseEntity<Airline>(airlineService.getAirlineById(id),HttpStatus.FOUND);
     }
